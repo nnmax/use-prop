@@ -1,11 +1,12 @@
 {
   "include": ["src/**/*"],
+  "exclude": ["src/**/*.test.*"],
   "compilerOptions": {
     "esModuleInterop": true,
     "outDir": "lib",
     "declaration": true,
     "target": "es6",
     "moduleResolution": "node",
-    "types": ["jest"]
+    "types": ["jest"],
   }
 }

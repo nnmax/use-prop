@@ -6,6 +6,8 @@
   "license": "MIT",
   "homepage": "https://github.com/nnmax/use-state-listening-prop",
   "packageManager": "yarn@3.2.1",
+  "main": "lib/use-state-listening-prop.js",
+  "module": "esm/use-state-listening-prop.js",
   "bugs": {
     "url": "https://github.com/nnmax/use-state-listening-prop/issues",
     "email": "nnmaxin@qq.com"
@@ -22,7 +24,9 @@
     "Listen Props"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "yarn build:cjs && yarn build:es",
+    "build:cjs": "tsc",
+    "build:es": "tsc -m esNext --outDir esm",
     "test": "jest"
   },
   "devDependencies": {
@@ -44,5 +48,12 @@
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
-  }
+  },
+  "files": [
+    "esm",
+    "lib",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ]
 }
