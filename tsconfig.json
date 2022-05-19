@@ -1,0 +1,11 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "outDir": "lib",
+    "declaration": true,
+    "target": "es6",
+    "moduleResolution": "node",
+    "types": ["jest"]
+  }
+}
