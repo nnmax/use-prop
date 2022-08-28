@@ -1,5 +1,3 @@
-Contribution
-
 ### 介绍
 
 这是一个解决外部 Props 更新到组件内部的 State 的方案，优雅的解决了 State 依赖外部 Props 并需要手动监听的问题。
