@@ -1,6 +1,6 @@
 {
   "name": "use-state-listening-prop",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Updating State From Properties With React Hooks",
   "author": "Ma Xin <nnmaxin@qq.com>",
   "license": "MIT",
