@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "build": "yarn build:cjs && yarn build:es",
-    "build:cjs": "tsc",
+    "build:cjs": "tsc -m commonjs --outDir lib",
     "build:es": "tsc -m esNext --outDir esm",
     "test": "jest"
   },
