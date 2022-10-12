@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 
-export type StateListeningPropResult<T> = [
+export type UsePropResult<T> = [
   T,
   React.Dispatch<React.SetStateAction<T>>
 ];
 
-const useStateListeningProp = <T>(prop: T): StateListeningPropResult<T> => {
+const useProp = <T>(prop: T): UsePropResult<T> => {
   const [state, setState] = useState<T>(prop);
   const previousPropRef = useRef<T>();
 
@@ -20,4 +20,4 @@ const useStateListeningProp = <T>(prop: T): StateListeningPropResult<T> => {
   return [state, setState];
 };
 
-export default useStateListeningProp;
+export default useProp;

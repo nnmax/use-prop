@@ -4,25 +4,25 @@
 
 ### 安装
 
-**use-state-listening-prop** 以 NPM 包的形式提供。
+**use-prop** 以 NPM 包的形式提供。
 
 ```shell
 # 使用 npm
-npm install use-state-listening-prop
+npm install use-prop
 
 # 使用 yarn
-yarn add use-state-listening-prop
+yarn add use-prop
 ```
 
 ### 使用
 
 ```jsx
 import React from 'react'
-import useStateListeningProp from 'use-state-listening-prop'
+import useProp from 'use-prop'
 
 const App = (props) => {
   const { user: userProp } = props
-  const [user, setUser] = useStateListeningProp(userProp)
+  const [user, setUser] = useProp(userProp)
   return (
     <>
       <p>Name: {user.name}</p>
@@ -42,11 +42,11 @@ const App = (props) => {
 export default App
 ```
 
-### 为什么选择 use-state-listening-prop？
+### 为什么选择 use-prop？
 
 在您的项目中，是否有很多将 Props 或 Context 的更新同步到 State 的情况？
 
-我们有多种方法处理这种情况，**use-state-listening-prop** 为以下方案的第三种：
+我们有多种方法处理这种情况，**use-prop** 为以下方案的第三种：
 
 1. 使用 useEffect 监听变化；
 2. 使用 useRef 跟踪上一个值的变化；
@@ -130,12 +130,12 @@ const Users = ({ users }) => {
 对此，您应该将此逻辑抽离成自定义 Hooks。
 
 ```typescript
-// File: useStateListeningProp.ts
+// File: useProp.ts
 import { useState, useRef, useEffect } from "react";
 
 type StateListeningPropResult<T> = [T, React.Dispatch<React.SetStateAction<T>>];
 
-const useStateListeningProp = <T>(prop: T): StateListeningPropResult<T> => {
+const useProp = <T>(prop: T): StateListeningPropResult<T> => {
   const [state, setState] = useState<T>(prop);
   const previousPropRef = useRef<T>();
 
@@ -150,7 +150,7 @@ const useStateListeningProp = <T>(prop: T): StateListeningPropResult<T> => {
   return [state, setState];
 };
 
-export default useStateListeningProp;
+export default useProp;
 ```
 
 像这样，就能在您的组件中使用了。
@@ -158,14 +158,14 @@ export default useStateListeningProp;
 ```tsx
 // File: Users.tsx
 import React from "react";
-import useStateListeningProp from "./useStateListeningProp";
+import useProp from "./useProp";
 
 type User = { id: string; name: string };
 
 const Users: React.FC<{ users: User[] }> = (props) => {
   const { users: usersProp } = props;
 
-  const [users, setUsers] = useStateListeningProp(usersProp);
+  const [users, setUsers] = useProp(usersProp);
 
   const addUser = (userName: User["name"]) => {
     setUsers((oldUsers) =>

@@ -1,20 +1,20 @@
 {
-  "name": "use-state-listening-prop",
+  "name": "use-prop",
   "version": "1.0.3",
   "description": "Updating State From Properties With React Hooks",
   "author": "Ma Xin <nnmaxin@qq.com>",
   "license": "MIT",
-  "homepage": "https://github.com/nnmax/use-state-listening-prop",
+  "homepage": "https://github.com/nnmax/use-prop",
   "packageManager": "yarn@3.2.1",
-  "main": "lib/use-state-listening-prop.js",
-  "module": "esm/use-state-listening-prop.js",
+  "main": "lib/use-prop.js",
+  "module": "esm/use-prop.js",
   "bugs": {
-    "url": "https://github.com/nnmax/use-state-listening-prop/issues",
+    "url": "https://github.com/nnmax/use-prop/issues",
     "email": "nnmaxin@qq.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nnmax/use-state-listening-prop"
+    "url": "https://github.com/nnmax/use-prop"
   },
   "keywords": [
     "React",

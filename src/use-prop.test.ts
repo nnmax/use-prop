@@ -1,10 +1,10 @@
 import { renderHook } from "@testing-library/react";
-import useStateListeningProp from "./use-state-listening-prop";
+import useProp from "./use-prop";
 
 test("The state should be reassigned after the change in props", () => {
   const user = { name: "Maxin", id: "1" };
   const { result, rerender } = renderHook(
-    (initialProps) => useStateListeningProp(initialProps.user),
+    (initialProps) => useProp(initialProps.user),
     {
       initialProps: { user },
     }
@@ -22,7 +22,7 @@ test("The state should be reassigned after the change in props", () => {
 test("If the props don't change, the state shouldn't change either", () => {
   const user = { name: "Maxin", id: "1" };
   const { result, rerender } = renderHook(
-    (initialProps) => useStateListeningProp(initialProps.user),
+    (initialProps) => useProp(initialProps.user),
     {
       initialProps: { user },
     }
