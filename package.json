@@ -1,6 +1,6 @@
 {
   "name": "use-prop",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Updating State From Properties With React Hooks",
   "author": "Ma Xin <nnmaxin@qq.com>",
   "license": "MIT",
